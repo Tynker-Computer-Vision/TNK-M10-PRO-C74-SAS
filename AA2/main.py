@@ -20,7 +20,6 @@ def printOccurences(ages):
         else:
             occurrences[element] = 1
 
-    print("Old Count:::::::::::::::::::::::::::::::")
     for element in occurrences:
         print(str(element) +": " + str(occurrences[element]))
 
