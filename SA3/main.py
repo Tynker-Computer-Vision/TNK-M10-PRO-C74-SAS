@@ -25,10 +25,7 @@ for img in os.listdir(path):
             # if bbox exits then
             if bbox:
                 # Get the X,Y,W,H of bbox in respective variables i.e X, Y, W, H
-                X = bbox[0]['bbox'][0]
-                Y = bbox[0]['bbox'][1]
-                W = bbox[0]['bbox'][2]
-                H = bbox[0]['bbox'][3]
+                X, Y, W, H = bbox[0]['bbox']
 
                 # Crop the face out of the image
                 croppedImg = img[Y:Y+H, X:X+W]
@@ -42,13 +39,11 @@ for img in os.listdir(path):
     except:
         print("error in reading")
 
-# Convert ages to np.array
 ages = np.array(ages,dtype=np.int64)
 
 # Convert images to np.array
 images = np.array(images)
 
-# Print age array
 print("Age",ages)
 
 # Print images array
